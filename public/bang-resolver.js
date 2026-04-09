@@ -19,9 +19,12 @@ async function resolve(bang, type) {
 /**
  * Resolves the URL for a given bang. This uses the official FopenBangs registry.
  * @param {string} bang Bang to resolve (can optionally begin with `!`)
+ * @param {string | undefined} query Optional query to place into the URL
  * @returns {Promise<string>} Resolved URL
  */
-window.bangUrl = async (bang) => {
+window.bangUrl = async (bang, query) => {
     if (bang.startsWith("!")) bang = bang.substring(1)
-    return resolve(bang, "url")
+    let resolved = await resolve(bang, "url")
+    if (query) resolved = resolved.replaceAll("%s", query)
+    return resolved
 }
