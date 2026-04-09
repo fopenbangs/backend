@@ -9,7 +9,11 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 include_directories(include)
 add_executable(${PROJECT_NAME} src/main.c
         src/registry.c
-        src/mongoose/mongoose.c)
+        src/database.c
+
+        # Libraries
+        src/mongoose/mongoose.c
+        src/sqlite3/sqlite3.c)
 
 # Public directory
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
