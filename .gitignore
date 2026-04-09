@@ -1,0 +1,35 @@
+*.log
+*.swp
+
+### Binaries/Output ###
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+
+### CMake ###
+cmake-build-debug/
+cmake-build-release/
+/build/
+/.cache/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+### IDEs ###
+.vscode/
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### OS ###
+.DS_Store
+Thumbs.db
